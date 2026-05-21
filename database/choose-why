@@ -1,0 +1,34 @@
+https://docs.aws.amazon.com/databases-on-aws-how-to-choose/
+
+Real-time applications
+Real-time applications such as caching, session stores, gaming leaderboards, ride hailing, ad targeting, and real-time analytics need microsecond latency and high throughput to support a trillion or more requests per second.
+Learn about building real-time applications with ElastiCache 
+Amazon DynamoDB 
+Amazon ElastiCache
+
+
+Amazon Aurora is the primary relational database in AWS with a serverless option, 
+while Amazon RDS itself is generally considered a managed, not serverless, service 
+
+
+AWS offers several purpose-built serverless database options: 
+
+• Amazon Aurora Serverless: A relational database compatible with MySQL and PostgreSQL that scales automatically. 
+• Amazon DynamoDB: A serverless, NoSQL key-value and document database that provides millisecond performance at any scale. 
+• Amazon Timestream: A serverless time-series database for IoT and operational applications. 
+• Amazon Keyspaces: A serverless, Apache Cassandra-compatible database service. 
+• Amazon Neptune Serverless: A serverless graph database for building applications with highly connected datasets. 
+• Amazon DocumentDB Serverless: A serverless MongoDB-compatible document database. 
+• Amazon ElastiCache Serverless: A serverless caching service compatible with Redis and Memcached (and Valkey). [1, 3, 4, 9, 10]  
+
+[1] https://www.techtarget.com/searchcloudcomputing/answer/When-should-I-use-Amazon-RDS-vs-Aurora-Serverless
+[2] https://www.youtube.com/shorts/ug0bro2wPYU
+[3] https://aws.amazon.com/rds/aurora/serverless/
+[4] https://aws.amazon.com/what-is/serverless-database/
+[5] https://www.youtube.com/watch?v=JZxrH-bhuXY
+[6] https://aws.amazon.com/rds/aurora/serverless/
+[7] https://www.techtarget.com/searchcloudcomputing/answer/When-should-I-use-Amazon-RDS-vs-Aurora-Serverless
+[8] https://www.clickittech.com/cloud-services/serverless-database/
+[9] https://aws.amazon.com/products/databases/
+[10] https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/serverless-data-storage-options.html
+
