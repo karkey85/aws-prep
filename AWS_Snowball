@@ -1,0 +1,15 @@
+https://www.youtube.com/watch?v=yl25W7LZAMU
+
+
+AWS snowcone:
+smallest device for transfering upto 8TB
+
+AWS snowball:
+AWS snowball is grey coloured briefcase device which is used to transfer petabytes of data from datacenter to this device and then to the AWS cloud.
+210 petabytes??
+
+
+AWS snowmobile -- truck based:
+Amazon Web Services (AWS) has ceased offering to transport data via an 18-wheeler truck after eight years.
+Announced in 2016 by bringing a semi-truck on stage, AWS Snowmobile was a 45 ft, 100 petabyte (100PB) mobile shipping container designed to physically transfer data offline from customer premises to AWS facilities en masse.
+However, as of March 2024, AWS had quietly removed Snowmobile from its website.
