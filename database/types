@@ -1,1 +1,26 @@
 https://docs.aws.amazon.com/whitepapers/latest/aws-overview/database.html
+
+
+Relational Database
+RDS
+
+Aurora ---- Why?
+Designed for unparalleled high performance and availability at global scale with full MySQL and PostgreSQL compatibility
+support MySQL and PostGreSql compatible DBs. 
+5 times faster than RDS
+128TB per database instance
+15 low-latency read replicas
+continuous backup to Amazon S3
+replication across three Availability Zones (AZs)
+
+
+NoSql
+DyanamoDB
+support peaks of more than 20 million requests per second
+
+
+Amazon ElastiCache
+Inmemory DB for caching
+Redis and Memcached
+
+
