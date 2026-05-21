@@ -7,6 +7,8 @@ Amazon DynamoDB
 Amazon ElastiCache
 
 
+Aurora vs RDS 
+
 Amazon Aurora is the primary relational database in AWS with a serverless option, 
 while Amazon RDS itself is generally considered a managed, not serverless, service 
 
@@ -22,13 +24,25 @@ AWS offers several purpose-built serverless database options:
 • Amazon ElastiCache Serverless: A serverless caching service compatible with Redis and Memcached (and Valkey). [1, 3, 4, 9, 10]  
 
 [1] https://www.techtarget.com/searchcloudcomputing/answer/When-should-I-use-Amazon-RDS-vs-Aurora-Serverless
-[2] https://www.youtube.com/shorts/ug0bro2wPYU
-[3] https://aws.amazon.com/rds/aurora/serverless/
-[4] https://aws.amazon.com/what-is/serverless-database/
-[5] https://www.youtube.com/watch?v=JZxrH-bhuXY
-[6] https://aws.amazon.com/rds/aurora/serverless/
-[7] https://www.techtarget.com/searchcloudcomputing/answer/When-should-I-use-Amazon-RDS-vs-Aurora-Serverless
-[8] https://www.clickittech.com/cloud-services/serverless-database/
-[9] https://aws.amazon.com/products/databases/
-[10] https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/serverless-data-storage-options.html
+
+
+Resource management
+Aurora Serverless provides greater flexibility in resource management and can deliver superior performance. Developers configure compute in terms of minimum and maximum Aurora Capacity Units (ACUs), which are a combination of virtual CPUs and memory -- 2 gigabytes (GB) per ACU. Aurora Serverless can also automatically scale compute capacity up or down based on demand. In 2022, Amazon introduced Aurora Serverless v2 with enhanced scalability and performance features.
+In contrast, RDS requires manual configuration changes to scale a database server to a larger instance type. This can cause up to five minutes of downtime. RDS offers autoscaling for read replicas, but the process takes a few minutes to execute as it must deploy additional RDS instances. Aurora Serverless' automatic scaling results in much faster deployment times, typically within a few seconds.
+
+Another factor to consider is that Aurora Serverless has a maximum memory capacity of 128 ACUs (256 GB of memory, which is the same as a db.r5.8xlarge RDS instance), while many instances available in RDS offer higher capacity, even as high as 3,904 GB.
+
+When using either Aurora Provisioned or Serverless, developers don't have to configure storage given that Aurora automatically assigns the required storage space. Aurora also offers the I/O-Optimized feature, which boosts performance and lowers cost for I/O intensive applications.
+
+Performance
+Aurora Serverless is a good fit for applications with unpredictable usage spikes. The database can be configured to quickly and automatically increase or decrease capacity as needed. Even though this setting offers the option to reduce capacity down to 0.5 ACUs during periods of low usage, users must thoroughly evaluate it in production environments. Reprovisioning compute capacity takes several seconds and can affect UX during sudden spikes. In contrast, these spikes require time-consuming capacity adjustments when using Amazon RDS.
+
+Regarding performance, it's important to execute load tests and determine which option delivers the best results. Since provisioned RDS offers a wide range of instance types, users can choose hardware characteristics -- memory optimizations, processor types, etc. -- tailored to specific use cases. However, the Aurora engine, whether Provisioned or Serverless, generally outperforms its RDS counterparts, such as RDS MySQL and RDS PostgreSQL.
+
+Cost
+Aurora Serverless can result in cost savings compared to provisioned Amazon RDS due to its dynamic compute capacity feature. However, if developers choose Aurora for the wrong use case or don't configure it properly, it can result in higher AWS costs. For example, in the North Virginia region, a single-AZ r5.large instance running RDS MySQL (16 GiB, $0.24 per hour) is the equivalent of 8 ACUs ($0.96 per hour), as of publication.
+
+In this case, if provisioned with constant capacity, Aurora Serverless is four times more expensive. However, there are cases where Aurora Serverless' dynamic compute capacity results in much lower costs.
+
+It's also important to note that Aurora Serverless is not eligible for Reserved Instances, which can lower RDS provisioned costs by approximately 30% to 60%, depending on the instance type and commitment term. An accurate cost comparison must consider usage patterns, load tests and Aurora Serverless dynamic compute configurations.
 
