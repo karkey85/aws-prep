@@ -12,7 +12,7 @@ support MySQL and PostGreSql compatible DBs.
 15 low-latency read replicas
 continuous backup to Amazon S3
 replication across three Availability Zones (AZs)
-
+Aurora Capacity Units (ACUs), which are a combination of virtual CPUs and memory -- 2 gigabytes (GB) per ACU. 
 
 NoSql
 DyanamoDB
