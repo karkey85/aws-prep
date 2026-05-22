@@ -16,13 +16,13 @@ We will attach a security group to Lambda so your database trusts it.
 
 # Step 1: Package Your Code and Dependencies
 
-# 1. Create a clean project folder
+## 1. Create a clean project folder
 mkdir lambda_release && cd lambda_release
 
-# 2. Target installation directly into this directory
+## 2. Target installation directly into this directory
 pip3 install pymysql -t .
 
-# 3. Create your script file
+## 3. Create your script file
 nano lambda_function.py
 
 Paste the following Lambda handler code into lambda_function.py:
