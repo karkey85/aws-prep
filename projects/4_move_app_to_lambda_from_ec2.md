@@ -86,3 +86,52 @@ def lambda_handler(event, context):
 Now, compress the directory into a zip deployment archive:
 
 zip -r ../lambda_deployment.zip .
+
+# Step 2: Configure Permissions & Security Groups
+
+Before creating the function, we need a security group for Lambda so the database can recognize it.
+
+1. Go to the EC2 Console -> Security Groups -> Create security group.
+Name: SG-Lambda-Function
+VPC: Select your Default VPC.
+Inbound Rules: Leave completely empty (nothing needs to initiate inbound requests directly to Lambda).
+
+2. Now, go to your RDS Security Group (SG-Database).
+Add a new Inbound Rule:
+Type: MySQL/Aurora (3306)
+Source: Select SG-Lambda-Function (Security Group Referencing).
+Save the rule.
+
+
+# Step 3: Create the Lambda Function
+Open the AWS Lambda Console and click Create function (Author from scratch).
+
+Function name: fetch-rds-users
+Runtime: Python 3.12 (or matching your deployment build version).
+Advanced settings:
+Check the box for Enable VPC.
+VPC: Select your Default VPC.
+Subnets: Choose at least 2 or 3 availability zone subnets (for high availability).
+Security groups: Choose SG-Lambda-Function.
+Click Create function.
+
+Note: AWS will auto-assign the standard AWSLambdaVPCAccessExecutionRole managed policy to your function's Execution Role, giving it rights to manage the elastic interfaces inside your VPC network.
+
+# Step 4: Upload Code and Set Environment Variables
+Inside your new Lambda function dashboard, navigate to the Code tab.
+**Click Upload from -> .zip file and select your lambda_deployment.zip.**
+Switch over to the Configuration tab -> Environment variables -> Edit.
+
+Map out your explicit strings:
+DB_HOST = Your RDS connection endpoint
+DB_USER = admin
+DB_PASS = Your database password
+DB_NAME = exam_practice
+Click Save.
+
+# Step 5: Test Execution
+Click on the Test tab in the Lambda console.
+Create a new dummy test event (the payload properties don't matter since our function ignores inputs and grabs all records). Give it a name like TestClick.
+Click Test.
+
+Your execution logs will output a successful 200 OK return block containing your JSON database records directly back inside the AWS console layout!
