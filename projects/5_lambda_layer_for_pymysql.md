@@ -97,13 +97,6 @@ python_layer $ aws lambda publish-layer-version \
 >     --description "Native PyMySQL database driver" \
 >     --zip-file fileb://pymysql_layer.zip \
 >     --compatible-runtimes python3.10 python3.11 python3.12
-{
-    "Content": {
-        "Location": "https://awslambda-ap-s-1-layers.s3.ap-south-1.amazonaws.com/snapshots/785716434644/pymysql-layer-dcd4e6fc-b78e-4884-ad64-05e7bcf2f117?versionId=xhbAOmmq2HbEKVPJB5iw_1pkkeuNtbMY&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFUaCmFwLXNvdXRoLTEiRjBEAiAeMuErLIqLv%2FZahp2koG8lmjyHCQaUc5XvHH4JVPtVQAIgO74%2FsROyPn%2Fp%2BgpZbuKbAleUjMMKJzDGbzcEn4rX%2BxcqtAUIHhAEGgw1NDUyNTUyMDEzMDciDDTh%2FJwOBBfT0ZQDFSqRBfrJpCe29jxZrny7QP0GR%2BKku1FdrVPtDfZPGN1AanUa%2FRRfjExgLpzcx5uY3XTRqe%2BWT93%2FyQowIjYocS7qBzoE5Ll4z7ewL752HkNdmeIXDT7505MUwq6UsraamgtXTSnfg5uo0X%2FsevjcEBiFddRhzlFV6dqzTjdrbYKUttYnRWgAuKJEm9mS7KENxNrz4D8d4OPVfpVe9kAVz578dtO%2BBzyOb4MYsWN6Rx2azTskEReENuonIupF1foGNI0GrA0UCL8VfYbsZeANzRmIRnsQoW4Cn%2FqGkw%2FHFm3DpK8qRiqad%2FBEE4tTIlyEYd4cpjyBxonrmMCeL3NY5WERVjqODYc7%2FzDoOpt6%2FYQCcS%2BvZnDDHMVrh9fsmlloMRxpGV%2BL75KypZq%2BKhKIgFkbtCAbGMWDO9kx0vmcysBqMnWaUYqG1fY3FNFAO6F7wwwdbkQSLzA7Y7MLm5ufsWW5WKUnXYDazatQIgcQXTqhzA1fbtdWbZBgBX19hjenJWN2Jo%2BMHHet1nw0rW1pScY9j9VB1UGM5DpSDHCQItD9ANQRAaMLnp86wBPowqiRP05VHC7wWFdBSCkahkoorQbLzZ21dDoSJq7RoivJs0FI6%2BO4leqOGtvsPUnWsn3TdCU9U0o7N7aJp4Z2h%2Bjtf1tOLK1pFSA2l3LUz39OJi%2BTcAKmiuI18zXlstnux3NqCt0YGeLCqKnjiAlLEQ7YYlcr38DR6rWuHjLqjLtM2oL3J5iDSPJqiazeGy3KZbm3wJppqsLbUbuow7j%2FxQJXk1fungDzs8IUuzlu08%2FX4qVlSZDUFdVSD4jBpo8alOOaE2KFJ7foI6JmWKhXUhUDws6yAicjgUsRcQ37xGKADN1k9ZLnRDCOr8HQBjqyAUpxO3wuLjvLDlctmfbo4YJ4Ea97QxHqs9n0CooeNFn%2FC%2FXElgEf5jznTO42FZC4ueMEQwWoxW7sNX8BUGlgR9fIOUWbLwIAuCZpPMiTH1ScflggAgYNeek8aMaGxbrzAB2K9KRXR7wBCaDsfE0Oftxjnv%2FAGwPgB5N63ek5DQyMS0JSjLa9u3%2FdVf48aFk%2FN2jjL5DWfaQQf6Iex0RiW8Pg4AD34PUsqIMRwHPRNjaD5SQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260522T142847Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAX5456DINYDY4IH7Z%2F20260522%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=b71f1a5b1904638d34307aa068db69d87d9e08ca5994bd9f4aa11b096b993347",
-        "CodeSha256": "zqUx21UtPqNg4gRAv8um3SXUB3Y2iE64Zt9iKQzHm6U=",
-        "CodeSize": 131870
-    },
-    "LayerArn": "arn:aws:lambda:ap-south-1:785716434644:layer:pymysql-layer",
     "LayerVersionArn": "arn:aws:lambda:ap-south-1:785716434644:layer:pymysql-layer:1",
     "Description": "Native PyMySQL database driver",
     "CreatedDate": "2026-05-22T14:28:52.485+0000",
